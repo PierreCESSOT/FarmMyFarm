@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controllers.LandFarm"
+    style="-fx-background-color: #1a1a2e;">
+
+    <top>
+        <HBox
+            alignment="CENTER_LEFT"
+            spacing="20"
+            style="
+                -fx-background-color: #16213e;
+                -fx-border-color: #4ade80;
+                -fx-border-width: 0 0 2 0;
+                -fx-padding: 12 20 12 20;
+            ">
+
+            <Label
+                text="Farm My Farm"
+                style="
+                    -fx-text-fill: #4ade80;
+                    -fx-font-size: 22px;
+                    -fx-font-weight: bold;
+                    -fx-font-family: 'Consolas';
+                "/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label
+                fx:id="lblStatus"
+                text="Sélectionnez une plante puis cliquez sur une parcelle"
+                style="
+                    -fx-text-fill: #94a3b8;
+                    -fx-font-size: 13px;
+                    -fx-font-style: italic;
+                "/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button
+                text="Marché"
+                onAction="#goToMarket"
+                style="
+                    -fx-background-color: #f59e0b;
+                    -fx-text-fill: #1a1a2e;
+                    -fx-font-size: 14px;
+                    -fx-font-weight: bold;
+                    -fx-padding: 8 20 8 20;
+                    -fx-background-radius: 6;
+                    -fx-cursor: hand;
+                "/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane
+            fitToWidth="true"
+            fitToHeight="true"
+            style="
+                -fx-background: #1a1a2e;
+                -fx-background-color: #1a1a2e;
+                -fx-border-color: transparent;
+            ">
+            <BorderPane.margin>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </BorderPane.margin>
+            <content>
+                <GridPane
+                    fx:id="gridlands"
+                    hgap="4"
+                    vgap="4"
+                    alignment="CENTER"
+                    style="-fx-padding: 10;">
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <VBox
+            style="
+                -fx-background-color: #16213e;
+                -fx-border-color: #4ade80;
+                -fx-border-width: 2 0 0 0;
+                -fx-padding: 10 20 10 20;
+            "
+            spacing="8">
+
+            <Label
+                text="MES GRAINES"
+                style="
+                    -fx-text-fill: #4ade80;
+                    -fx-font-size: 11px;
+                    -fx-font-weight: bold;
+                    -fx-font-family: 'Consolas';
+                "/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Button
+                    text="Patate"
+                    onAction="#selectPatate"
+                    style="
+                        -fx-background-color: #92400e;
+                        -fx-text-fill: #fef3c7;
+                        -fx-font-size: 13px;
+                        -fx-font-weight: bold;
+                        -fx-padding: 7 16 7 16;
+                        -fx-background-radius: 6;
+                        -fx-cursor: hand;
+                    "/>
+
+                <Button
+                    text="Maïs"
+                    onAction="#selectMais"
+                    style="
+                        -fx-background-color: #365314;
+                        -fx-text-fill: #d9f99d;
+                        -fx-font-size: 13px;
+                        -fx-font-weight: bold;
+                        -fx-padding: 7 16 7 16;
+                        -fx-background-radius: 6;
+                        -fx-cursor: hand;
+                    "/>
+
+                <Separator orientation="VERTICAL" style="-fx-padding: 0 6 0 6;"/>
+
+                <Label
+                    text="Stock :"
+                    style="-fx-text-fill: #94a3b8; -fx-font-size: 12px;"/>
+
+                <GridPane
+                    fx:id="gridplantslist"
+                    hgap="8"
+                    vgap="4"
+                    alignment="CENTER_LEFT">
+                </GridPane>
+
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
